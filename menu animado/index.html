@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title> MEMNU ANIMADO</title>
+
+<style>
+*{
+margin:0;
+padding: 0; 
+}
+body{
+	background-color: #414950;
+}
+nav{
+	margin: 150px auto;
+	width: 450px;
+	height: 450px;
+}
+#check{
+	display: none;
+}
+#central{
+	cursor: pointer;
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	margin:150px 150px;
+	z-index: 1;
+}
+#central img{
+	width: 100%;
+	transition: all .4s ease-in-out;
+	border-radius: 50%
+}
+.link{
+	position: absolute;
+	margin:195px 195px;
+	width: 60px;
+	height:60px;
+	border-radius: 50%;
+	transition: all .1s ease-out 
+}
+#check:checked ~ a #link_01{
+	transform: translateY(-195px);
+}
+#check:checked ~ a #link_02{
+	transform: translateX(195px);
+	transition-delay: .1s;
+}
+#check:checked ~ a #link_03{
+	transform: translateY(195px);
+	transition-delay: .2s;
+}
+#check:checked ~ a #link_04{
+	transform: translateX(-195px);
+	transition-delay: .3s;
+}
+#check:checked ~ #central img{
+	transform: rotate(45deg);
+}
+
+</style>
+</head>
+
+<body>
+<nav>
+	
+	<input type="checkbox" id="check">
+	<label id="central" for="check"><img src="img/central.png"/></label>
+	<a href="#"><img class="link" id="link_01" src="img/01.png"/></a>
+	<a href="#"><img class="link" id="link_02" src="img/02.png"/></a>
+	<a href="#"><img class="link" id="link_03" src="img/03.png"/></a>
+	<a href="#"><img class="link" id="link_04" src="img/04.png"/></a>
+</nav>
+
+
+<script type="text/javascript"src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript"src="js/materialize.min.js"></script>
+
+</body>
+</html>
